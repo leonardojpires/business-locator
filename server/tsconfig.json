@@ -19,7 +19,7 @@
     "noEmitOnError": true,
 
     "sourceMap": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
   },
   "include": ["**/*.ts"],
   "exclude": ["node_modules", "dist"]

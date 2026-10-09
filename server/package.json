@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server": "tsx watch src/server.js",
+    "crawl": "tsx crawlers/crawler.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,11 +14,14 @@
   "type": "module",
   "devDependencies": {
     "@types/express": "^5.0.6",
+    "@types/jsdom": "^30.0.0",
     "@types/node": "^26.6.4",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "crawlee": "^3.18.2",
+    "express": "^5.2.1",
+    "playwright": "^1.64.0"
   }
 }
