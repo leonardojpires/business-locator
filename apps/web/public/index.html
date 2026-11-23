@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Business Locator</title>
+        <link rel="stylesheet" href="/style.css" />
+    </head>
+    <body>
+        <main>
+            <header>
+                <div>
+                    <p class="eyebrow">BUSINESS LOCATOR</p>
+                    <h1>Businesses</h1>
+                </div>
+                <p id="status" class="status">Loading...</p>
+            </header>
+
+            <section class="summary">
+                <strong id="count">0</strong>
+                <span>businesses found</span>
+            </section>
+
+            <section id="businesses" class="businesses" aria-live="polite"></section>
+        </main>
+        <script src="/app.js"></script>
+    </body>
+</html>
