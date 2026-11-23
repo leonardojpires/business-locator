@@ -15,13 +15,15 @@
   "devDependencies": {
     "@types/express": "^5.0.6",
     "@types/jsdom": "^30.0.0",
-    "@types/node": "^26.6.4",
+    "@types/node": "^26.6.6",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
   "dependencies": {
     "crawlee": "^3.18.2",
+    "dotenv": "^18.0.10",
     "express": "^5.2.1",
+    "mysql2": "^3.24.6",
     "playwright": "^1.64.0"
   }
 }
