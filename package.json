@@ -1,0 +1,20 @@
+{
+  "name": "business-locator",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c green,blue \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "npm run server --workspace=server",
+    "dev:web": "npm run dev --workspace=business-locator-web",
+    "build": "npm run build --workspace=business-locator-web",
+    "preview": "npm run preview --workspace=business-locator-web",
+    "crawl": "npm run crawl --workspace=server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}

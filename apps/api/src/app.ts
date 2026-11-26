@@ -3,6 +3,7 @@ import helmet from "helmet";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import crawlBusinessRoute from "./presentation/http/routes/crawl-business.routes.js";
 
 export function createApp() {
   const app = express();
@@ -21,6 +22,8 @@ export function createApp() {
   app.use(express.static(publicPath));
 
   app.get("/health", (_req: Request, res: Response) => res.json({ status: "ok" }), );
+
+  app.use("/api/crawl", crawlBusinessRoute);
 
   app.use((_req, res) =>
     res.status(404).json({ message: "Resource not found." }),

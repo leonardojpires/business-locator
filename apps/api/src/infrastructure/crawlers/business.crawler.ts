@@ -1,12 +1,25 @@
 import { log, PlaywrightCrawler } from "crawlee";
-import { router } from "./routes/routes.js";
+import { router } from "./routes.crawler.js";
 
-log.setLevel(log.LEVELS.DEBUG);
+// log.setLevel(log.LEVELS.DEBUG);
 
-log.debug('Setting up Crawler...');
-const crawler = new PlaywrightCrawler({
-    requestHandler: router,
-    maxRequestsPerCrawl: 500
-});
+// log.debug('Setting up Crawler...');
 
-await crawler.run(['https://www.infoempresas.com.pt/Distrito_AVEIRO.html']);
+export interface IBusinessCrawler {
+    crawl(url: string[]): Promise<void>
+}
+
+export class BusinessCrawler {
+    private readonly crawler: PlaywrightCrawler;
+
+    constructor() {
+        this.crawler = new PlaywrightCrawler({
+            requestHandler: router,
+            maxRequestsPerCrawl: 10
+        });
+    }
+
+    async crawl(url: string[]) {
+        await this.crawler.run(url);
+    }
+}

@@ -1,5 +1,3 @@
-
-
 export interface BusinessData {
     readonly id: number;
     readonly url: string;
